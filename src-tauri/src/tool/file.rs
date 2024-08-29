@@ -39,9 +39,7 @@ pub fn search_file_by_keyword(path: &str, keyword: &str) -> Result<HashMap<Strin
             }
 
             if !line_numbers.is_empty() {
-                // println!("====================================================");
                 println!("找到文件: {}，关键字出现在行号: {:?}", path.display(), line_numbers);
-                // println!("====================================================");
                 results.insert(path.to_str().unwrap().to_string(), line_numbers);
             }
         }

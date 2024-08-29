@@ -1,15 +1,17 @@
-import {Layout, Menu, theme} from 'antd';
+import { Layout, Menu, theme } from 'antd';
 import { Routes, Route, useNavigate } from "react-router-dom";
-import {FileIndex} from "../page/file";
-import {StructIndex} from "../page/struct";
+import { StructIndex } from "../page/struct";
+import { FileIndex } from '../page/file';
+import Icon from '@ant-design/icons';
+import { TangMuSvg } from '../assets/svg';
 
-const {Header, Content} = Layout;
+const { Header, Content } = Layout;
 
 function PageLayout() {
     const {
-        token: {colorBgContainer, borderRadiusLG},
+        token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
-    
+
     const navigate = useNavigate();
 
     const handleClick = (e: any) => {
@@ -19,8 +21,8 @@ function PageLayout() {
 
     return (
         <Layout>
-            <Header style={{display: 'flex', alignItems: 'center'}}>
-                <div className="demo-logo"/>
+            <Header style={{ display: 'flex', alignItems: 'center' }}>
+               <Icon component={TangMuSvg}/>
                 <Menu
                     theme="dark"
                     mode="horizontal"
@@ -35,7 +37,7 @@ function PageLayout() {
                             label: '结构体工具'
                         },
                     ]}
-                    style={{flex: 1, minWidth: 0}}
+                    style={{ flex: 1, minWidth: 0 }}
                     onClick={handleClick}
                 />
             </Header>
@@ -44,6 +46,7 @@ function PageLayout() {
                     margin: "24px 16px",
                     padding: 24,
                     minHeight: 280,
+                    height: '86vh',
                     background: colorBgContainer,
                     borderRadius: borderRadiusLG,
                 }}>
